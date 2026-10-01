@@ -1,3 +1,106 @@
+# ☕ Cafeteria Order Analytics & Demand Forecasting
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-orange)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-green)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-yellow)
+![Git](https://img.shields.io/badge/Git-Version%20Control-orange)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+
+## 📌 Project Overview
+
+**Cafeteria Order Analytics & Demand Forecasting** is an end-to-end data analytics project developed as part of the **Kanishka Software Pvt. Ltd. Internship Evaluation Challenge**.
+
+The project analyzes cafeteria transaction data using **MySQL and Python** to identify sales patterns, branch performance, payment behavior, peak ordering hours, data-quality issues, and baseline future demand.
+
+### What I Worked On
+
+- Analyzed **24,444 cafeteria transactions**
+- Performed data cleaning and validation
+- Calculated revenue, orders, and Average Order Value
+- Compared performance across **3 branches**
+- Identified peak ordering hours
+- Analyzed payment methods
+- Investigated zero-value transactions
+- Identified repeated order-number values
+- Generated analytical CSV reports
+- Created data visualizations
+- Built a simple baseline demand forecast
+- Derived business insights from transaction data
+
+---
+
+## 👩‍💻 Author
+
+**Akshada Valkunde**
+
+Computer Engineering  
+Padmabhushan Vasantdada Patil Pratishthan's College of Engineering & Visual Arts (PVPPCOE)
+
+GitHub: [@vu1f2324001](https://github.com/vu1f2324001)
+
+---
+
+# 🎯 Objectives
+
+- Analyze cafeteria order transaction data
+- Measure overall revenue and order performance
+- Calculate Average Order Value (AOV)
+- Compare branch-wise sales and order volumes
+- Identify peak ordering hours
+- Analyze payment methods
+- Detect data-quality issues
+- Analyze zero-value transactions
+- Identify repeated order-number values
+- Create meaningful visualizations
+- Generate a baseline demand forecast
+- Derive business-oriented insights
+
+---
+
+# 📊 Dataset Summary
+
+| Metric | Value |
+|---|---:|
+| Total Orders | **24,444** |
+| Total Revenue | **₹15,81,186.20** |
+| Average Order Value | **₹64.69** |
+| Unique Customer IDs | **6,661** |
+| Branches | **3** |
+| Zero-Value Orders | **435** |
+| Negative-Value Orders | **0** |
+| Analysis Period | **1 Apr 2024 – 2 Apr 2024** |
+
+> **Note:** The current analysis covers only two calendar days. Therefore, forecasting and trend analysis should be considered baseline analysis rather than long-term prediction.
+
+---
+
+# 🧹 Data Cleaning & Quality Checks
+
+The transaction data was validated before performing the final analysis.
+
+### Checks Performed
+
+- Date and time conversion
+- Payment method normalization
+- Missing/unknown payment method handling
+- Zero-value transaction detection
+- Negative-value transaction detection
+- Repeated order-number identification
+- Branch uniqueness checks
+- Customer ID uniqueness checks
+- Transaction-level validation
+
+---
+
+## 💰 Zero-Value Transactions
+
+A total of **435 orders** had:
+
+```text
+grand_total = ₹0
+---
+
 ### Observation
 
 Branches 1 and 2 account for the majority of recorded revenue, contributing approximately 94.65% combined revenue.
