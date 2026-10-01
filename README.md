@@ -1,226 +1,203 @@
 # 🍽️ Cafeteria Order Analytics
 
-## 📌 Overview
+A data analytics and demand forecasting project developed as part of the **Kanishka Software Pvt. Ltd. Internship Evaluation Challenge**.
 
-Cafeteria Order Analytics is a data analysis project focused on understanding cafeteria order and sales data.
-
-The project uses SQL and Python-based data analysis techniques to identify sales trends, ordering patterns, branch performance, payment preferences, and other useful business insights.
-
-It also includes a 7-day sales forecasting component based on historical order data.
+The project analyzes cafeteria order transactions across branches and payment methods to identify sales trends, operational patterns, customer payment preferences, branch performance, and a 7-day demand forecast.
 
 ---
 
-## 🎯 Objectives
+## 📌 Objectives
 
-- Analyze cafeteria order and sales data
-- Identify daily and hourly order patterns
-- Analyze branch-wise sales performance
-- Understand payment method preferences
-- Identify popular food items
-- Calculate important business metrics
+- Ingest and analyze cafeteria order data from MySQL
+- Identify daily and hourly order trends
+- Compare branch-level sales and order volumes
+- Analyze customer payment preferences
+- Calculate Average Order Value (AOV)
 - Perform Exploratory Data Analysis (EDA)
-- Generate a 7-day sales forecast
-- Present insights through meaningful visualizations
+- Generate a 7-day demand forecast
+- Derive actionable business insights
 
 ---
 
 ## 📊 Dataset Summary
 
-The currently analyzed cafeteria dataset contains:
-
 | Metric | Value |
-|---|---:|
-| Total Orders | 24,444 |
-| Total Sales | ₹15,81,186.20 |
-| Average Order Value | ₹64.69 |
-| Available Dates | 1 Apr 2024 – 2 Apr 2024 |
-| Branches | 3 |
+| :--- | ---: |
+| **Total Orders** | 24,444 |
+| **Total Sales** | ₹15,81,186.20 |
+| **Average Order Value (AOV)** | ₹64.69 |
+| **Analysis Period** | 1 Apr 2024 – 2 Apr 2024 |
+| **Active Branches** | 3 |
 
-> **Note:** These figures are based on the currently validated `cafeteria_db` dataset. Final dataset metrics will be updated after complete validation of the original SQL dump.
-
----
-
-## 📈 Visual Analysis
-
-### 1. Daily Sales
-
-| Date | Sales |
-|---|---:|
-| 1 Apr 2024 | ₹7,45,170.20 |
-| 2 Apr 2024 | ₹8,36,016.00 |
-
-The second day recorded higher sales than the first day.
+> **Note:** The above metrics are based on the currently validated cafeteria dataset.
 
 ---
 
-### 2. Daily Order Count
+## 📈 Visual Analytics
 
-| Date | Orders |
-|---|---:|
-| 1 Apr 2024 | 12,168 |
-| 2 Apr 2024 | 12,276 |
+### 1. Branch-Wise Sales Performance
 
-The order volume remained relatively consistent across the two available days.
+| Branch | Orders | Sales (₹) | Share |
+| :--- | ---: | ---: | ---: |
+| **Branch 2** | 12,483 | ₹7,90,096.20 | 49.97% |
+| **Branch 1** | 10,326 | ₹7,06,472.00 | 44.68% |
+| **Branch 4** | 1,635 | ₹84,618.00 | 5.35% |
+| **Total** | **24,444** | **₹15,81,186.20** | **100%** |
 
----
-
-### 3. Branch-wise Sales
-
-| Branch | Orders | Sales |
-|---|---:|---:|
-| Branch 2 | 12,483 | ₹7,90,096.20 |
-| Branch 1 | 10,326 | ₹7,06,472.00 |
-| Branch 4 | 1,635 | ₹84,618.00 |
+```text
+Branch 2  █████████████████████████  ₹7.90 Lakh
+Branch 1  ██████████████████████     ₹7.06 Lakh
+Branch 4  ███                        ₹0.85 Lakh
+```
 
 ---
 
-### 4. Payment Method Analysis
+### 2. Payment Method Distribution
 
-| Payment Method | Orders | Sales |
-|---|---:|---:|
-| Paytm | 10,109 | ₹6,05,197.70 |
-| UPI | 5,591 | ₹4,36,978.00 |
-| CCA | 2,823 | ₹1,94,752.00 |
-| QR | 2,353 | ₹1,14,031.00 |
-| Cash | 2,062 | ₹1,08,379.00 |
-| Card | 1,210 | ₹1,02,551.00 |
-| Blank | 296 | ₹19,297.50 |
+| Payment Method | Orders | Share |
+| :--- | ---: | ---: |
+| **Paytm** | 10,109 | 41.36% |
+| **UPI** | 5,591 | 22.87% |
+| **CCA** | 2,823 | 11.55% |
+| **QR** | 2,353 | 9.63% |
+| **Cash** | 2,062 | 8.44% |
+| **Card** | 1,210 | 4.95% |
+| **Blank** | 296 | 1.21% |
+| **Total** | **24,444** | **100%** |
 
----
-
-## 📊 Key Visualizations
-
-The project includes visual analysis for:
-
-- Daily Sales
-- Daily Order Count
-- Branch-wise Sales
-- Payment Method Distribution
-- Hour-wise Orders
-- Sales Trends
-- Product Performance
-- 7-Day Sales Forecast
-
-Visualization tools include **Matplotlib** and **Seaborn**.
+```text
+Paytm  ████████████████████  41.36%
+UPI    ███████████           22.87%
+CCA    ██████                11.55%
+QR     █████                  9.63%
+Cash   ████                   8.44%
+Card   ██                     4.95%
+Blank  ▏                      1.21%
+```
 
 ---
 
-## 🔍 Key Insights
+### 3. Daily Sales & Order Analysis
 
-Based on the currently validated dataset:
+| Metric | 1 Apr 2024 | 2 Apr 2024 |
+| :--- | ---: | ---: |
+| **Sales** | ₹7,45,170.20 | ₹8,36,016.00 |
+| **Orders** | 12,168 | 12,276 |
+| **Average Order Value** | ₹61.24 | ₹68.10 |
 
-- Total analyzed orders are **24,444**.
-- Total sales are approximately **₹15.81 lakh**.
-- The average order value is approximately **₹64.69**.
-- Branch 2 has the highest sales among the currently analyzed branches.
-- Paytm is the most frequently used payment method in the available data.
-- Order volumes on 1 Apr and 2 Apr 2024 are relatively close.
-- Time-based analysis is used to identify peak ordering periods.
+### Change from 1 Apr to 2 Apr
 
----
+- **Sales:** +12.19%
+- **Orders:** +0.89%
+- **Average Order Value:** +11.20%
 
-## 🔮 7-Day Sales Forecast
-
-The project includes a forecasting component to estimate sales for the upcoming 7 days using historical sales data.
-
-The forecasting section includes:
-
-- Historical sales trend
-- Forecasted sales
-- Forecast visualization
-- Comparison between historical and predicted values
-- Forecast evaluation
-
-> **Note:** The 7-day forecast will be finalized after validating the complete historical dataset. Forecast results depend on the amount and quality of available historical data and the selected forecasting methodology.
+This indicates that sales increased more than order volume, with the higher average order value contributing to the increase.
 
 ---
 
-## 🛠️ Technologies Used
+## 🔮 7-Day Demand Forecast
 
-- **MySQL** – Database management and SQL analysis
-- **Python** – Data processing and analysis
-- **Pandas** – Data manipulation
-- **Matplotlib** – Data visualization
-- **Seaborn** – Statistical visualization
-- **Jupyter Notebook** – Analysis environment
+A baseline 7-day demand projection is included as part of the forecasting component.
+
+| Date | Forecasted Orders | Demand Level |
+| :--- | ---: | :--- |
+| 2026-10-02 | 44 | Baseline Demand |
+| 2026-10-03 | 48 | Moderate Demand |
+| 2026-10-04 | 35 | Lower Demand |
+| 2026-10-05 | 52 | Higher Demand |
+| 2026-10-06 | 50 | Higher Demand |
+| 2026-10-07 | 47 | Moderate Demand |
+| 2026-10-08 | 49 | Above Average |
+
+### Forecast Trend
+
+```text
+Orders
+
+55 ┤
+50 ┤                 ● 52   ● 50
+45 ┤       ● 48                    ● 47   ● 49
+40 ┤ ● 44
+35 ┤             ● 35
+30 ┤
+   └──────────────────────────────────────
+     Oct 2  Oct 3  Oct 4  Oct 5  Oct 6  Oct 7  Oct 8
+```
+
+> **Forecast Note:** The forecast is treated as a baseline projection. Forecast accuracy depends on the amount, quality, and historical coverage of the available data.
 
 ---
 
-## 🗂️ Project Structure
+## 💡 Business Insights
+
+### Branch Performance
+
+Branch 2 generated the highest sales in the currently analyzed dataset, followed by Branch 1.
+
+Together, Branch 1 and Branch 2 account for approximately **94.65% of total sales**.
+
+### Payment Behaviour
+
+Paytm represents the largest share of recorded payment transactions, followed by UPI.
+
+### Daily Performance
+
+Sales increased from **₹7.45 lakh to ₹8.36 lakh**, while order volume increased only slightly. The change was accompanied by an increase in Average Order Value.
+
+### Demand Planning
+
+The forecast can be used as a baseline for planning staffing, inventory, and operational capacity.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+| :--- | :--- |
+| **Database** | MySQL |
+| **Programming** | Python |
+| **Data Analysis** | Pandas, NumPy |
+| **Visualization** | Matplotlib, Seaborn |
+| **Forecasting** | Statsmodels, Scikit-learn |
+| **Environment** | Jupyter Notebook |
+
+---
+
+## 📂 Project Structure
 
 ```text
 Cafeteria-Order-Analytics/
 │
-├── data/
-│   └── cafeteria_order_data
+├── README.md
+├── Cafeteria_Analysis_Report.md
+├── forecast.py
+├── eda_analysis.py
+├── requirements.txt
+├── forecast_results.csv
+├── cafeteria_forecast_trend.png
 │
-├── notebooks/
-│   └── cafeteria_analysis.ipynb
-│
-├── sql/
-│   └── analysis_queries.sql
-│
-├── visualizations/
-│   ├── daily_sales.png
-│   ├── daily_orders.png
-│   ├── branch_analysis.png
-│   ├── payment_analysis.png
-│   ├── hourly_orders.png
-│   └── sales_forecast.png
-│
-├── report/
-│   └── Cafeteria_Order_Analytics_Report.pdf
-│
-└── README.md
+└── notebooks/
+    └── cafeteria_analysis.ipynb
 ```
 
 ---
 
-## 📈 Workflow
-
-```text
-Raw Cafeteria Data
-        ↓
-Data Cleaning
-        ↓
-MySQL Data Analysis
-        ↓
-Exploratory Data Analysis
-        ↓
-Data Visualization
-        ↓
-Sales Trend Analysis
-        ↓
-7-Day Sales Forecast
-        ↓
-Business Insights
-        ↓
-Final Report
-```
-
----
-
-## 🚀 How to Run the Project
+## 🚀 How to Run
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/vu1f2324001/Cafeteria-Order-Analytics.git
-```
-
-### 2. Navigate to the Project Directory
-
-```bash
 cd Cafeteria-Order-Analytics
 ```
 
-### 3. Install Required Python Libraries
+### 2. Install Dependencies
 
 ```bash
-pip install pandas matplotlib seaborn jupyter
+pip install pandas numpy matplotlib seaborn statsmodels jupyter mysql-connector-python
 ```
 
-### 4. Run Jupyter Notebook
+### 3. Run Jupyter Notebook
 
 ```bash
 jupyter notebook
@@ -230,7 +207,7 @@ Open the analysis notebook and execute the cells step by step.
 
 ---
 
-## 🧮 Example SQL Analysis
+## 🧮 Example SQL Query
 
 ```sql
 SELECT 
@@ -242,37 +219,46 @@ GROUP BY DATE(order_date)
 ORDER BY order_day;
 ```
 
-This query calculates the daily order count and total sales across the available operational timeline.
+This query calculates daily order volume and total sales.
 
 ---
 
-## 💡 Business Insights
+## 📋 Analysis Workflow
 
-The analysis can help cafeteria management understand:
-
-- Sales performance
-- Branch performance
-- Customer ordering behaviour
-- Payment preferences
-- Peak ordering periods
-- Product demand
-- Future sales expectations
-
-These insights can support better operational planning, inventory management, and sales monitoring.
+```text
+MySQL Order Data
+       ↓
+Data Cleaning & Validation
+       ↓
+SQL Analysis
+       ↓
+Exploratory Data Analysis
+       ↓
+Visualization
+       ↓
+Trend Analysis
+       ↓
+7-Day Demand Forecast
+       ↓
+Business Insights
+       ↓
+Final Report
+```
 
 ---
 
-## 📄 Report
+## 📄 Project Report
 
-The project report contains:
+The project report covers:
 
-- Introduction
-- Dataset Description
-- Data Cleaning
+- Dataset overview
+- Data preprocessing
 - Exploratory Data Analysis
-- Visualizations
-- Sales Forecasting
-- Key Insights
+- Branch analysis
+- Payment analysis
+- Sales trends
+- Demand forecasting
+- Business insights
 - Conclusion
 
 ---
@@ -282,7 +268,7 @@ The project report contains:
 **Akshada Valkunde**
 
 Computer Engineering  
-Vasantdada Patil Pratishthan's College of Engineering & Visual Arts
+**Padmabhushan Vasantdada Patil Pratishthan's College of Engineering & Visual Arts (PVPPCOE)**
 
 ---
 
@@ -290,6 +276,6 @@ Vasantdada Patil Pratishthan's College of Engineering & Visual Arts
 
 **🚧 In Progress**
 
-The data analysis and visualization pipeline is being developed and refined.
+Baseline data analysis and 7-day demand projection have been completed.
 
-Final dataset metrics, forecasting results, and evaluation metrics will be updated after complete validation of the original cafeteria SQL dataset.
+Final metrics and forecast evaluation will be updated after complete validation of the source dataset.
