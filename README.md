@@ -92,14 +92,13 @@ The transaction data was validated before performing the final analysis.
 - Transaction-level validation
 
 ---
-
 ## 💰 Zero-Value Transactions
 
 A total of **435 orders** had:
 
 ```text
 grand_total = ₹0
----
+
 
 ### Observation
 
