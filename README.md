@@ -213,7 +213,7 @@ The current report provides the following baseline rolling-trend forecast[span_4
 
 ## 📈 Forecast Visualization
 
-![Cafeteria - Next 7 Days Demand Forecast](cafeteria_forecast_trend.png)
+![Cafeteria - Next 7 Days Demand Forecast](file_00000000ee58821193a15f224ba0217b.png)
 
 The visualization shows the reported baseline forecast for the next seven days[span_13](start_span)[span_13](end_span)[span_14](start_span)[span_14](end_span).
 
