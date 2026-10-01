@@ -4,7 +4,7 @@
 
 Cafeteria Order Analytics is a data analysis project focused on understanding cafeteria order and sales data.
 
-The project uses SQL and Python-based data analysis techniques to identify sales trends, ordering patterns, branch performance, payment preferences, and other business insights.
+The project uses SQL and Python-based data analysis techniques to identify sales trends, ordering patterns, branch performance, payment preferences, and other useful business insights.
 
 It also includes a 7-day sales forecasting component based on historical order data.
 
@@ -24,56 +24,114 @@ It also includes a 7-day sales forecasting component based on historical order d
 
 ---
 
-## 📊 Key Analysis
+## 📊 Dataset Summary
 
-### Sales Analysis
+The currently analyzed cafeteria dataset contains:
 
-- Total Sales
-- Total Orders
-- Average Order Value (AOV)
-- Daily Sales Trends
-- Daily Order Trends
+| Metric | Value |
+|---|---:|
+| Total Orders | 24,444 |
+| Total Sales | ₹15,81,186.20 |
+| Average Order Value | ₹64.69 |
+| Available Dates | 1 Apr 2024 – 2 Apr 2024 |
+| Branches | 3 |
 
-### Branch Analysis
+> **Note:** These figures are based on the currently validated `cafeteria_db` dataset. Final dataset metrics will be updated after complete validation of the original SQL dump.
 
-- Branch-wise Order Count
-- Branch-wise Revenue
-- Branch Performance Comparison
+---
 
-### Payment Analysis
+## 📈 Visual Analysis
 
-- Cash Payments
-- Card Payments
-- UPI
-- QR
-- Other Payment Methods
+### 1. Daily Sales
 
-### Time-Based Analysis
+| Date | Sales |
+|---|---:|
+| 1 Apr 2024 | ₹7,45,170.20 |
+| 2 Apr 2024 | ₹8,36,016.00 |
 
+The second day recorded higher sales than the first day.
+
+---
+
+### 2. Daily Order Count
+
+| Date | Orders |
+|---|---:|
+| 1 Apr 2024 | 12,168 |
+| 2 Apr 2024 | 12,276 |
+
+The order volume remained relatively consistent across the two available days.
+
+---
+
+### 3. Branch-wise Sales
+
+| Branch | Orders | Sales |
+|---|---:|---:|
+| Branch 2 | 12,483 | ₹7,90,096.20 |
+| Branch 1 | 10,326 | ₹7,06,472.00 |
+| Branch 4 | 1,635 | ₹84,618.00 |
+
+---
+
+### 4. Payment Method Analysis
+
+| Payment Method | Orders | Sales |
+|---|---:|---:|
+| Paytm | 10,109 | ₹6,05,197.70 |
+| UPI | 5,591 | ₹4,36,978.00 |
+| CCA | 2,823 | ₹1,94,752.00 |
+| QR | 2,353 | ₹1,14,031.00 |
+| Cash | 2,062 | ₹1,08,379.00 |
+| Card | 1,210 | ₹1,02,551.00 |
+| Blank | 296 | ₹19,297.50 |
+
+---
+
+## 📊 Key Visualizations
+
+The project includes visual analysis for:
+
+- Daily Sales
+- Daily Order Count
+- Branch-wise Sales
+- Payment Method Distribution
 - Hour-wise Orders
-- Peak Ordering Hours
-- Sales Trends by Date
+- Sales Trends
+- Product Performance
+- 7-Day Sales Forecast
 
-### Product Analysis
+Visualization tools include **Matplotlib** and **Seaborn**.
 
-- Top-Selling Items
-- Item-wise Order Frequency
-- Revenue Contribution
+---
+
+## 🔍 Key Insights
+
+Based on the currently validated dataset:
+
+- Total analyzed orders are **24,444**.
+- Total sales are approximately **₹15.81 lakh**.
+- The average order value is approximately **₹64.69**.
+- Branch 2 has the highest sales among the currently analyzed branches.
+- Paytm is the most frequently used payment method in the available data.
+- Order volumes on 1 Apr and 2 Apr 2024 are relatively close.
+- Time-based analysis is used to identify peak ordering periods.
 
 ---
 
 ## 🔮 7-Day Sales Forecast
 
-Historical sales data is used to estimate sales for the upcoming 7 days.
+The project includes a forecasting component to estimate sales for the upcoming 7 days using historical sales data.
 
 The forecasting section includes:
 
-- Historical Sales Trend
-- Forecasted Sales
-- Forecast Visualization
-- Comparison of Historical and Predicted Values
+- Historical sales trend
+- Forecasted sales
+- Forecast visualization
+- Comparison between historical and predicted values
+- Forecast evaluation
 
-> **Note:** Forecast results depend on the available historical data and forecasting methodology. Final metrics will be updated after complete data validation and pipeline execution.
+> **Note:** The 7-day forecast will be finalized after validating the complete historical dataset. Forecast results depend on the amount and quality of available historical data and the selected forecasting methodology.
 
 ---
 
@@ -104,9 +162,11 @@ Cafeteria-Order-Analytics/
 │
 ├── visualizations/
 │   ├── daily_sales.png
+│   ├── daily_orders.png
 │   ├── branch_analysis.png
 │   ├── payment_analysis.png
-│   └── hourly_orders.png
+│   ├── hourly_orders.png
+│   └── sales_forecast.png
 │
 ├── report/
 │   └── Cafeteria_Order_Analytics_Report.pdf
@@ -134,21 +194,9 @@ Sales Trend Analysis
 7-Day Sales Forecast
         ↓
 Business Insights
+        ↓
+Final Report
 ```
-
----
-
-## 💡 Key Insights
-
-The analysis helps identify:
-
-- High-performing branches
-- Peak ordering periods
-- Frequently used payment methods
-- Popular products
-- Daily sales patterns
-- Customer ordering behaviour
-- Expected sales for the next 7 days
 
 ---
 
@@ -198,16 +246,34 @@ This query calculates the daily order count and total sales across the available
 
 ---
 
-## 📊 Expected Outcomes
+## 💡 Business Insights
 
-The project provides a data-driven view of cafeteria operations and helps understand:
+The analysis can help cafeteria management understand:
 
 - Sales performance
-- Ordering behaviour
 - Branch performance
-- Payment trends
+- Customer ordering behaviour
+- Payment preferences
+- Peak ordering periods
 - Product demand
 - Future sales expectations
+
+These insights can support better operational planning, inventory management, and sales monitoring.
+
+---
+
+## 📄 Report
+
+The project report contains:
+
+- Introduction
+- Dataset Description
+- Data Cleaning
+- Exploratory Data Analysis
+- Visualizations
+- Sales Forecasting
+- Key Insights
+- Conclusion
 
 ---
 
@@ -220,8 +286,10 @@ Vasantdada Patil Pratishthan's College of Engineering & Visual Arts
 
 ---
 
-## 📄 Project Status
+## 📌 Project Status
 
 **🚧 In Progress**
 
-Data analysis, visualization, and forecasting modules are being developed and refined. Final performance metrics and forecast evaluation results will be documented after complete database validation.
+The data analysis and visualization pipeline is being developed and refined.
+
+Final dataset metrics, forecasting results, and evaluation metrics will be updated after complete validation of the original cafeteria SQL dataset.
