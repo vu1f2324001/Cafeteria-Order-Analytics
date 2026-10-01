@@ -79,7 +79,7 @@ GitHub: [@vu1f2324001](https://github.com/vu1f2324001)
 
 The transaction data was validated before performing the final analysis.
 
-### Checks Performed
+## Checks Performed
 
 - Date and time conversion
 - Payment method normalization
@@ -92,17 +92,62 @@ The transaction data was validated before performing the final analysis.
 - Transaction-level validation
 
 ---
-## 💰 Zero-Value Transactions
 
-A total of **435 orders** had:
+# 💰 Zero-Value Transactions
 
-```text
-grand_total = ₹0
+A total of **435 orders** had `grand_total = ₹0`.
 
+These records were not automatically deleted.
+
+Further investigation showed:
+
+- Positive subtotal values
+- Positive reward amounts
+- No refund indicators
+- No cancellation reasons
+- No recorded discounts
+
+Therefore, these records were retained and flagged as `zero_value_order = True`.
+
+This approach helps avoid deleting potentially valid transactions without proper investigation.
+
+---
+
+## 🔁 Repeated Order Numbers
+
+Repeated `order_number` values were identified during data-quality analysis.
+
+Record-level inspection showed that repeated order-number values can occur across transactions with differences in:
+
+- Date
+- Customer
+- Branch
+- Order value
+- Payment method
+
+Therefore, repeated order-number values were **flagged rather than automatically deleted**.
+
+---
+
+# 🏢 Branch Performance
+
+| Branch | Orders | Revenue | AOV |
+|---|---:|---:|---:|
+| Branch 2 | 12,483 | ₹7,90,096.20 | ₹63.29 |
+| Branch 1 | 10,326 | ₹7,06,472.00 | ₹68.42 |
+| Branch 4 | 1,635 | ₹84,618.00 | ₹51.75 |
+
+### Revenue by Branch
+
+![Revenue by Branch](outputs/revenue_by_branch.png)
+
+### Orders by Branch
+
+![Orders by Branch](outputs/orders_by_branch.png)
 
 ### Observation
 
-Branches 1 and 2 account for the majority of recorded revenue, contributing approximately 94.65% combined revenue.
+Branches 1 and 2 account for approximately **94.65% of total recorded revenue**.
 
 Branch 2 recorded the highest order volume and revenue, while Branch 1 recorded a higher average order value.
 
@@ -156,9 +201,9 @@ Payment methods were normalized into standard categories before analysis.
 
 ### Observation
 
-Paytm generated the highest recorded revenue share at 38.27%, followed by UPI at 27.64%.
+Paytm generated the highest recorded revenue share at **38.27%**, followed by UPI at **27.64%**.
 
-Card transactions had the highest average order value among the listed payment methods at ₹84.75.
+Card transactions had the highest average order value among the listed payment methods at **₹84.75**.
 
 ---
 
@@ -183,7 +228,7 @@ Between the two recorded days:
 
 - Orders increased by approximately **0.89%**
 - Revenue increased by approximately **12.19%**
-- Average order value increased by approximately **11.20%**
+- Average Order Value increased by approximately **11.20%**
 
 Because the dataset covers only two days, these changes should not be interpreted as a long-term trend.
 
@@ -212,7 +257,7 @@ This value was used as a simple reference baseline for future demand estimation.
 Based on the analyzed data:
 
 1. **Branch 2** recorded the highest order volume and revenue.
-2. **Branches 1 and 2** generated approximately 94.65% of total recorded revenue.
+2. **Branches 1 and 2** generated approximately **94.65%** of total recorded revenue.
 3. **19:00** was the highest-volume ordering hour.
 4. Evening hours showed strong ordering activity.
 5. **Paytm** generated the largest revenue share among payment methods.
@@ -256,3 +301,211 @@ Visualization
 Demand Baseline
         ↓
 Business Insights
+```
+
+---
+
+# 📁 Project Structure
+
+```text
+Cafeteria-Order-Analytics/
+│
+├── README.md
+├── requirements.txt
+│
+├── clean_data.py
+├── final_analysis.py
+├── deep_analysis.py
+├── create_charts.py
+│
+├── analytics_summary.csv
+├── branch_analysis.csv
+├── daily_analysis.csv
+├── data_quality_summary.csv
+├── forecast_results.csv
+├── hourly_analysis.csv
+├── payment_analysis.csv
+│
+└── outputs/
+    ├── revenue_by_branch.png
+    ├── orders_by_branch.png
+    ├── orders_by_hour.png
+    ├── revenue_by_hour.png
+    ├── daily_orders.png
+    ├── daily_revenue.png
+    ├── payment_revenue.png
+    ├── order_value_distribution.png
+    └── demand_forecast.png
+```
+
+---
+
+# ▶️ How to Run
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/vu1f2324001/Cafeteria-Order-Analytics.git
+cd Cafeteria-Order-Analytics
+```
+
+## 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## 3. Configure MySQL
+
+Make sure MySQL 8.0 is installed and running.
+
+Configure the database connection in the Python scripts:
+
+```python
+host = "localhost"
+user = "root"
+password = "YOUR_PASSWORD"
+database = "cafeteria_db"
+```
+
+> Never commit real passwords or credentials to GitHub.
+
+## 4. Run Data Cleaning
+
+```bash
+python clean_data.py
+```
+
+## 5. Run Final Analysis
+
+```bash
+python final_analysis.py
+```
+
+The scripts generate analytical CSV files and visualization outputs.
+
+---
+
+# 🔐 Data Privacy
+
+Raw database dumps and customer-level transaction data are intentionally excluded from the public repository.
+
+The following files are excluded using `.gitignore`:
+
+```text
+Cafeteria Order Data.sql
+users.sql
+cleaned_orders.csv
+```
+
+This prevents large raw database files and transaction-level data from being publicly uploaded.
+
+---
+
+# ⚠️ Limitations
+
+- The analyzed dataset covers only **1 April 2024 to 2 April 2024**.
+- Two days of data are insufficient for reliable weekly, monthly, or seasonal analysis.
+- The demand forecast is a simple baseline.
+- Long-term demand patterns cannot be established from the current time range.
+- Forecast accuracy cannot be meaningfully evaluated using only two historical days.
+- Repeated order numbers do not necessarily represent duplicate transactions.
+- Product-level demand forecasting is not included.
+
+---
+
+# 🚀 Future Improvements
+
+With a larger historical dataset, the project can be extended with:
+
+### Forecasting
+
+- ARIMA
+- Prophet
+- XGBoost
+- Random Forest
+- LSTM
+- MAE / RMSE / MAPE model evaluation
+
+### Advanced Analytics
+
+- Weekly and monthly trend analysis
+- Seasonal demand analysis
+- Branch-level demand forecasting
+- Product-level sales analysis
+- Customer segmentation
+- RFM analysis
+- Customer retention analysis
+- Anomaly detection
+
+### Business Intelligence
+
+- Power BI dashboard
+- Tableau dashboard
+- Interactive Plotly dashboard
+- Automated KPI reporting
+- Real-time demand monitoring
+
+### Operations
+
+- Inventory demand prediction
+- Staff scheduling based on peak hours
+- Branch-specific demand planning
+- Stock optimization
+
+---
+
+# 🎓 Skills Demonstrated
+
+- SQL
+- MySQL
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Data Cleaning
+- Exploratory Data Analysis
+- Data Visualization
+- KPI Analysis
+- Business Analytics
+- Data Quality Analysis
+- Baseline Demand Forecasting
+- Git
+- GitHub
+
+---
+
+# 🎓 Internship Evaluation Context
+
+This project was developed for the:
+
+**Kanishka Software Pvt. Ltd. Internship Evaluation Challenge**
+
+The implementation demonstrates practical application of:
+
+**SQL + Python + Data Cleaning + EDA + Visualization + Business Analysis + Forecasting**
+
+---
+
+# 📈 Project Outcome
+
+This project demonstrates an end-to-end data analytics workflow:
+
+**SQL → Data Cleaning → EDA → KPI Analysis → Visualization → Baseline Forecasting → Business Insights**
+
+The project converts raw cafeteria transaction data into structured analytical outputs while documenting data-quality issues and clearly communicating the limitations of the available dataset.
+
+---
+
+# 👩‍💻 Author
+
+**Akshada Valkunde**
+
+Computer Engineering  
+PVPPCOE
+
+GitHub: [@vu1f2324001](https://github.com/vu1f2324001)
+
+---
+
+⭐ If you find this project useful, feel free to explore the repository and analysis outputs.
