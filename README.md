@@ -1,265 +1,20 @@
-# 🍽️ Cafeteria Order Analytics
+# Cafeteria Order Analytics & Demand Forecasting
 
-A data analytics and demand forecasting project developed as part of the **Kanishka Software Pvt. Ltd. Internship Evaluation Challenge**.
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-orange)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-green)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-yellow)
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
-The project analyzes cafeteria order transactions across branches and payment methods to identify sales trends, operational patterns, customer payment preferences, branch performance, and a 7-day demand forecast.
+## 📌 Project Overview
 
----
+**Cafeteria Order Analytics & Demand Forecasting** is a data analytics project developed as part of the **Kanishka Software Pvt. Ltd. Internship Evaluation Challenge**.
 
-## 📌 Objectives
+The project analyzes cafeteria order transaction data using **MySQL and Python** to identify sales patterns, branch performance, payment behavior, peak ordering hours, data-quality issues, and baseline future demand.
 
-- Ingest and analyze cafeteria order data from MySQL
-- Identify daily and hourly order trends
-- Compare branch-level sales and order volumes
-- Analyze customer payment preferences
-- Calculate Average Order Value (AOV)
-- Perform Exploratory Data Analysis (EDA)
-- Generate a 7-day demand forecast
-- Derive actionable business insights
+The analysis follows a complete data workflow:
 
----
-
-## 📊 Dataset Summary
-
-| Metric | Value |
-| :--- | ---: |
-| **Total Orders** | 24,444 |
-| **Total Sales** | ₹15,81,186.20 |
-| **Average Order Value (AOV)** | ₹64.69 |
-| **Analysis Period** | 1 Apr 2024 – 2 Apr 2024 |
-| **Active Branches** | 3 |
-
-> **Note:** The above metrics are based on the currently validated cafeteria dataset.
-
----
-
-## 📈 Visual Analytics
-
-### 1. Branch-Wise Sales Performance
-
-| Branch | Orders | Sales (₹) | Share |
-| :--- | ---: | ---: | ---: |
-| **Branch 2** | 12,483 | ₹7,90,096.20 | 49.97% |
-| **Branch 1** | 10,326 | ₹7,06,472.00 | 44.68% |
-| **Branch 4** | 1,635 | ₹84,618.00 | 5.35% |
-| **Total** | **24,444** | **₹15,81,186.20** | **100%** |
-
-```text
-Branch 2  █████████████████████████  ₹7.90 Lakh
-Branch 1  ██████████████████████     ₹7.06 Lakh
-Branch 4  ███                        ₹0.85 Lakh
-```
-
----
-
-### 2. Payment Method Distribution
-
-| Payment Method | Orders | Share |
-| :--- | ---: | ---: |
-| **Paytm** | 10,109 | 41.36% |
-| **UPI** | 5,591 | 22.87% |
-| **CCA** | 2,823 | 11.55% |
-| **QR** | 2,353 | 9.63% |
-| **Cash** | 2,062 | 8.44% |
-| **Card** | 1,210 | 4.95% |
-| **Blank** | 296 | 1.21% |
-| **Total** | **24,444** | **100%** |
-
-```text
-Paytm  ████████████████████  41.36%
-UPI    ███████████           22.87%
-CCA    ██████                11.55%
-QR     █████                  9.63%
-Cash   ████                   8.44%
-Card   ██                     4.95%
-Blank  ▏                      1.21%
-```
-
----
-
-### 3. Daily Sales & Order Analysis
-
-| Metric | 1 Apr 2024 | 2 Apr 2024 |
-| :--- | ---: | ---: |
-| **Sales** | ₹7,45,170.20 | ₹8,36,016.00 |
-| **Orders** | 12,168 | 12,276 |
-| **Average Order Value** | ₹61.24 | ₹68.10 |
-
-### Change from 1 Apr to 2 Apr
-
-- **Sales:** +12.19%
-- **Orders:** +0.89%
-- **Average Order Value:** +11.20%
-
-This indicates that sales increased more than order volume, with the higher average order value contributing to the increase.
-
----
-
-## 🔮 7-Day Demand Forecast
-
-A baseline 7-day demand projection is included as part of the forecasting component.
-
-| Date | Forecasted Orders | Demand Level |
-| :--- | ---: | :--- |
-| 2026-10-02 | 44 | Baseline Demand |
-| 2026-10-03 | 48 | Moderate Demand |
-| 2026-10-04 | 35 | Lower Demand |
-| 2026-10-05 | 52 | Higher Demand |
-| 2026-10-06 | 50 | Higher Demand |
-| 2026-10-07 | 47 | Moderate Demand |
-| 2026-10-08 | 49 | Above Average |
-
-### Forecast Trend
-
-```text
-Orders
-
-55 ┤
-50 ┤                 ● 52   ● 50
-45 ┤       ● 48                    ● 47   ● 49
-40 ┤ ● 44
-35 ┤             ● 35
-30 ┤
-   └──────────────────────────────────────
-     Oct 2  Oct 3  Oct 4  Oct 5  Oct 6  Oct 7  Oct 8
-```
-
-> **Forecast Note:** The forecast is treated as a baseline projection. Forecast accuracy depends on the amount, quality, and historical coverage of the available data.
-
----
-
-## 💡 Business Insights
-
-### Branch Performance
-
-Branch 2 generated the highest sales in the currently analyzed dataset, followed by Branch 1.
-
-Together, Branch 1 and Branch 2 account for approximately **94.65% of total sales**.
-
-### Payment Behaviour
-
-Paytm represents the largest share of recorded payment transactions, followed by UPI.
-
-### Daily Performance
-
-Sales increased from **₹7.45 lakh to ₹8.36 lakh**, while order volume increased only slightly. The change was accompanied by an increase in Average Order Value.
-
-### Demand Planning
-
-The forecast can be used as a baseline for planning staffing, inventory, and operational capacity.
-
----
-
-## 🛠️ Tech Stack
-
-| Category | Technologies |
-| :--- | :--- |
-| **Database** | MySQL |
-| **Programming** | Python |
-| **Data Analysis** | Pandas, NumPy |
-| **Visualization** | Matplotlib, Seaborn |
-| **Forecasting** | Statsmodels, Scikit-learn |
-| **Environment** | Jupyter Notebook |
-
----
-
-## 📂 Project Structure
-
-```text
-Cafeteria-Order-Analytics/
-│
-├── README.md
-├── Cafeteria_Analysis_Report.md
-├── forecast.py
-├── eda_analysis.py
-├── requirements.txt
-├── forecast_results.csv
-├── cafeteria_forecast_trend.png
-│
-└── notebooks/
-    └── cafeteria_analysis.ipynb
-```
-
----
-
-## 🚀 How to Run
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/vu1f2324001/Cafeteria-Order-Analytics.git
-cd Cafeteria-Order-Analytics
-```
-
-### 2. Install Dependencies
-
-```bash
-pip install pandas numpy matplotlib seaborn statsmodels jupyter mysql-connector-python
-```
-
-### 3. Run Jupyter Notebook
-
-```bash
-jupyter notebook
-```
-
-Open the analysis notebook and execute the cells step by step.
-
----
-
-## 🧮 Example SQL Query
-
-```sql
-SELECT 
-    DATE(order_date) AS order_day,
-    COUNT(*) AS total_orders,
-    SUM(grand_total) AS total_sales
-FROM orders
-GROUP BY DATE(order_date)
-ORDER BY order_day;
-```
-
-This query calculates daily order volume and total sales.
-
----
-
-## 📋 Analysis Workflow
-
-```text
-MySQL Order Data
-       ↓
-Data Cleaning & Validation
-       ↓
-SQL Analysis
-       ↓
-Exploratory Data Analysis
-       ↓
-Visualization
-       ↓
-Trend Analysis
-       ↓
-7-Day Demand Forecast
-       ↓
-Business Insights
-       ↓
-Final Report
-```
-
----
-
-## 📄 Project Report
-
-The project report covers:
-
-- Dataset overview
-- Data preprocessing
-- Exploratory Data Analysis
-- Branch analysis
-- Payment analysis
-- Sales trends
-- Demand forecasting
-- Business insights
-- Conclusion
+**Raw Data → Data Cleaning → Exploratory Data Analysis → Visualization → Demand Forecasting → Business Insights**
 
 ---
 
@@ -268,14 +23,138 @@ The project report covers:
 **Akshada Valkunde**
 
 Computer Engineering  
-**Padmabhushan Vasantdada Patil Pratishthan's College of Engineering & Visual Arts (PVPPCOE)**
+Padmabhushan Vasantdada Patil Pratishthan's College of Engineering & Visual Arts (PVPPCOE)
+
+GitHub: [@vu1f2324001](https://github.com/vu1f2324001)
 
 ---
 
-## 📌 Project Status
+# 🎯 Objectives
 
-**🚧 In Progress**
+- Analyze cafeteria order transaction data
+- Measure overall revenue and order performance
+- Compare branch-wise sales and order volumes
+- Identify peak ordering hours
+- Analyze payment methods
+- Detect and document data-quality issues
+- Analyze zero-value transactions
+- Create visual dashboards/charts
+- Generate a simple baseline demand forecast
+- Derive actionable business insights
 
-Baseline data analysis and 7-day demand projection have been completed.
+---
 
-Final metrics and forecast evaluation will be updated after complete validation of the source dataset.
+# 📊 Dataset Summary
+
+The current analysis dataset contains:
+
+| Metric | Value |
+|---|---:|
+| Total Orders | **24,444** |
+| Total Revenue | **₹15,81,186.20** |
+| Average Order Value | **₹64.69** |
+| Branches | **3** |
+| Unique Customers | **6,661** |
+| Zero-Value Orders | **435** |
+| Negative-Value Orders | **0** |
+| Analysis Period | **1 Apr 2024 – 2 Apr 2024** |
+
+> **Note:** The currently analyzed dataset covers two calendar days. Therefore, weekday and forecasting insights are treated as limited/baseline analysis rather than long-term seasonal predictions.
+
+---
+
+# 🧹 Data Cleaning & Quality Checks
+
+The raw order data was reviewed before performing analytics.
+
+### Checks performed
+
+- Missing/unknown payment method handling
+- Payment method normalization
+- Zero-value transaction detection
+- Negative-value transaction detection
+- Repeated order-number identification
+- Date/time conversion
+- Branch and customer uniqueness checks
+
+### Zero-Value Transactions
+
+There were **435 orders** where `grand_total = ₹0`.
+
+These records were **not deleted**.
+
+Further investigation showed:
+
+- 435/435 had positive subtotal values
+- 435/435 had positive reward amounts
+- 0 were marked as refunded
+- 0 had cancellation reasons
+- 0 had discounts recorded
+
+Therefore, these records were retained and flagged as:
+
+`zero_value_order = True`
+
+This prevents potentially valid transactions from being incorrectly removed.
+
+### Repeated Order Numbers
+
+Repeated `order_number` values were identified.
+
+However, detailed record-level inspection showed that repeated order numbers can correspond to separate transactions with differences in:
+
+- Date
+- Customer
+- Branch
+- Order value
+- Payment method
+
+Therefore, repeated order numbers were **flagged instead of deleted**.
+
+---
+
+# 📈 Key Performance Indicators
+
+### Total Revenue
+
+**₹15,81,186.20**
+
+### Total Orders
+
+**24,444**
+
+### Average Order Value
+
+**₹64.69**
+
+### Unique Customers
+
+**6,661**
+
+### Branches
+
+**3**
+
+---
+
+# 🏢 Branch Performance
+
+The analysis compares branches based on order volume, revenue, and average order value.
+
+| Branch | Orders | Revenue | AOV |
+|---|---:|---:|---:|
+| Branch 2 | 12,483 | ₹7,90,096.20 | ₹63.29 |
+| Branch 1 | 10,326 | ₹7,06,472.00 | ₹68.42 |
+| Branch 4 | 1,635 | ₹84,618.00 | ₹51.75 |
+
+### Revenue by Branch
+
+![Revenue by Branch](outputs/revenue_by_branch.png)
+
+### Orders by Branch
+
+![Orders by Branch](outputs/orders_by_branch.png)
+
+### Observation
+
+Branches 1 and 2 account for the majority of recorded
