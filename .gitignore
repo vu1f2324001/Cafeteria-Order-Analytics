@@ -1,0 +1,17 @@
+# Raw database dumps
+Cafeteria Order Data.sql
+users.sql
+
+# Raw / customer-level dataset
+cleaned_orders.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
