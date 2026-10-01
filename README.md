@@ -1,74 +1,64 @@
-# Cafeteria-Order-Analytics
-Cafeteria Order Analytics and 7-Day Demand Forecasting Challenge
-Cafeteria Order Analytics & Demand Forecasting
+# Cafeteria Order Analytics & Demand Forecasting
 
-📌 Project Overview
+A data analytics and demand forecasting project developed as part of the **Kanishka Software Pvt. Ltd. Internship Evaluation Challenge**.
 
-This project analyzes cafeteria order data across multiple branches and counters and aims to forecast order demand for the next 7 days for a selected branch.
+The project focuses on analyzing cafeteria order data across multiple branches and counters, identifying operational patterns, and forecasting order demand for the next 7 days for a selected branch.
 
-This project was developed as part of the Kanishka Software Pvt. Ltd. internship evaluation challenge.
+---
 
-🎯 Objectives
+## 📌 Project Objective
 
-- Import and clean cafeteria order data
-- Perform exploratory data analysis
+The main objectives of this project are:
+
+- Import and process cafeteria order data
+- Clean and prepare the dataset
+- Perform Exploratory Data Analysis (EDA)
 - Analyze branch-wise order patterns
 - Identify peak ordering periods
-- Identify top-performing menu items
-- Build a 7-day order forecasting model
-- Generate actionable business insights
+- Analyze menu/item performance
+- Select a branch for demand forecasting
+- Forecast the next 7 days of orders
+- Generate meaningful business insights and recommendations
 
-🛠️ Technologies
+---
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- MySQL
-- Scikit-learn
-- Statsmodels
+## 🛠️ Technologies Used
 
-📂 Project Structure
+| Technology | Purpose |
+|------------|---------|
+| Python | Data analysis and forecasting |
+| Pandas | Data manipulation and preprocessing |
+| NumPy | Numerical operations |
+| Matplotlib | Data visualization |
+| MySQL | Data storage and SQL queries |
+| Scikit-learn | Machine learning utilities |
+| Statsmodels | Time-series analysis |
 
-Cafeteria-Order-Analytics/
-│
-├── README.md
-├── Cafeteria_Analysis_Report.md
-├── forecast.py
-├── requirements.txt
-└── cafeteria_forecast_trend.png
+---
 
-📊 Analysis Workflow
+## 🔄 Project Workflow
 
+```text
 SQL Dataset
      ↓
 Data Import
      ↓
-Data Cleaning
+Data Cleaning & Validation
      ↓
-Exploratory Data Analysis
+Exploratory Data Analysis (EDA)
      ↓
-Branch & Time Analysis
+Branch Analysis
      ↓
-Branch Selection
+Time-Based Analysis
+     ↓
+Menu / Item Analysis
+     ↓
+Select One Branch
+     ↓
+Daily Order Aggregation
      ↓
 7-Day Forecast
      ↓
 Business Insights
      ↓
 Final Report
-
-🚧 Current Status
-
-Work in Progress
-
-The SQL dataset is being processed locally because of its large size. The final numerical results, charts, and forecast will be updated after validating the complete dataset.
-
-📈 Planned Deliverables
-
-- Cleaned data analysis
-- EDA visualizations
-- Branch-wise insights
-- 7-day forecast
-- Business recommendations
-- Final technical report
