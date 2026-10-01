@@ -1,4 +1,4 @@
-# 🍽️️ Cafeteria Order Analytics & Demand Forecasting
+# 🍽️ Cafeteria Order Analytics & Demand Forecasting
 
 A data analytics and demand forecasting project developed as part of the **Kanishka Software Pvt. Ltd. Internship Evaluation Challenge**.
 
@@ -191,7 +191,7 @@ For forecasting:
 
 ## 🔮 Next 7 Days Demand Forecast
 
-The current report provides the following baseline rolling-trend forecast[span_1](start_span)[span_1](end_span):
+The current report provides the following baseline rolling-trend forecast[span_4](start_span)[span_4](end_span):
 
 | Date | Estimated Orders |
 | :---: | :---: |
@@ -204,10 +204,10 @@ The current report provides the following baseline rolling-trend forecast[span_1
 | 2026-10-08 | 49 |
 
 ### Forecast Summary
-- The reported forecast ranges from **35 to 52 estimated orders per day**[span_2](start_span)[span_2](end_span).
-- **Highest projected demand:** 52 orders on October 5, 2026[span_3](start_span)[span_3](end_span)
-- **Lowest projected demand:** 35 orders on October 4, 2026[span_4](start_span)[span_4](end_span)
-- **Forecast period:** October 2–8, 2026[span_5](start_span)[span_5](end_span)
+- The reported forecast ranges from **35 to 52 estimated orders per day**[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span).
+- **Highest projected demand:** 52 orders on October 5, 2026[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)
+- **Lowest projected demand:** 35 orders on October 4, 2026[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)
+- **Forecast period:** October 2–8, 2026[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span)
 
 ---
 
@@ -215,13 +215,13 @@ The current report provides the following baseline rolling-trend forecast[span_1
 
 ![Cafeteria - Next 7 Days Demand Forecast](cafeteria_forecast_trend.png)
 
-The visualization shows the reported baseline forecast for the next seven days[span_6](start_span)[span_6](end_span).
+The visualization shows the reported baseline forecast for the next seven days[span_13](start_span)[span_13](end_span)[span_14](start_span)[span_14](end_span).
 
 ---
 
 ## 📋 Forecast Data
 
-The forecast results are stored in `forecast_results.csv`[span_7](start_span)[span_7](end_span):
+The forecast results are stored in `forecast_results.csv`[span_15](start_span)[span_15](end_span):
 
 | Date | Forecasted Orders |
 | :---: | :---: |
